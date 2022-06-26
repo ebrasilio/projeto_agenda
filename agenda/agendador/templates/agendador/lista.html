@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista{% endblock %}
+
+{% block content %} 
+<div class = 'col-10 list-div'>
+    <h1>Eventos</h1>
+    <a id = "add-link" href="{% url 'novo_evento' %}">
+        <div class="col-2 add-div">
+            <i class="fas fa-plus"></i> Adicionar 
+        </div>
+    </a>
+
+    <!-- <div class="col-9 search-div">
+        <form id="search-form" method="GET">
+            <input class='form-control' type="text" id="search" name='search' placeholder="Digite qualquer coisa">
+            <i class="fas fa-search" id="search-btn"></i>
+        </form>
+         -->
+    </div>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li> {{message}} </li>
+            {% endfor %}
+        </ul>
+    {%endif%}
+
+    <ul class="task-list" list-style-type="none">
+        {% for evento in eventos %}
+        <li class="task-item">
+            <span>{{ evento.data_ag }} - {{ evento.cliente }} - {{ evento.servico }} - {{ evento.profis }}</span>
+            <a href="/delete/{{evento.id}}" class="delet-btn"><span><i class="fas fa-trash"></i></span></a>
+            <a href="/update/{{evento.id}}"><span><i class="fas fa-edit"> </i></span></a>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="paginacao" align="center">
+        <span class="step-links">
+            {% if eventos.has_previous %}
+                <a href="?page={{ eventos.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+            {% endif %}
+            
+            <span class="current">
+                {{ eventos.number }}  de  {{ eventos.paginator.num_pages }}
+            </span>
+
+            {% if eventos.has_next %}
+                <a href="?page={{ eventos.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+            {% endif %}
+
+        </span>
+    </div>
+</div>
+
+    
+{% endblock %}

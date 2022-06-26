@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}Agenda{% endblock %}
+
+{% block content %} 
+<div class="offset-0 col-10 list-div">
+    <h1> Agende seu Serviço</h1>
+    <form method="POST">
+        {% csrf_token %} <!--segurança-->
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-success" value="Agendar">
+    </form>
+</div>
+
+{% endblock %}
