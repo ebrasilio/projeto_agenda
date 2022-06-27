@@ -30,6 +30,7 @@ django-admin startapp accounts
 ```
 <h2>Rodar projeto após git-clone:</h2>
 Para iniciar este projeto, após cloná-lo como ele está:
+
 ```
 cd projeto_agenda/agenda
 
