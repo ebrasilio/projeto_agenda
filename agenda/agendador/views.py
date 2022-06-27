@@ -2,22 +2,19 @@ from distutils import core
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from .models import Agendamento
 from .forms import AgendamentoForm
 
-def helloworld(request):
-    return HttpResponse('<h1>Hello World!</h1>')
 
 def home(request):
     return render(request, 'agendador/home.html')
 
-def yourName(request, name):
-    return render(request, 'agendador/yourname.html', {'name': name} )
-
+@login_required
 def listar(request):
     eventos_lista = Agendamento.objects.all().order_by('data_ag')
-    paginator = Paginator(eventos_lista, 3)
+    paginator = Paginator(eventos_lista, 10)
     page = request.GET.get('page')
     eventos = paginator.get_page(page)
 
@@ -25,6 +22,7 @@ def listar(request):
 
 
 # create
+@login_required
 def agendar(request):
     form = AgendamentoForm(request.POST or None)
     if form.is_valid():
@@ -33,6 +31,7 @@ def agendar(request):
     return render(request, 'agendador/agendar_form.html', {'form': form} )
 
 # update - edit
+@login_required
 def update(request, pk):
     data = {}
     agenda = Agendamento.objects.get(pk=pk)
@@ -47,6 +46,7 @@ def update(request, pk):
     return render(request, 'agendador/agendar_form.html', data)
 
 # delete
+@login_required
 def delete(request, pk):
     agenda = Agendamento.objects.get(pk=pk)
     agenda.delete()

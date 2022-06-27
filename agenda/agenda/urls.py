@@ -6,6 +6,7 @@ urlpatterns = [
     # app agendador
     path('', include('agendador.urls')),
     # app pre construido do django para conta de usuários
+    path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 
 ]
