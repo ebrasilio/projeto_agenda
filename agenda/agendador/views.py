@@ -13,8 +13,11 @@ def home(request):
 
 @login_required
 def listar(request):
-    eventos_lista = Agendamento.objects.all().order_by('data_ag')
-    paginator = Paginator(eventos_lista, 10)
+    eventos_lista = Agendamento.objects.filter(user = request.user)
+    #eventos_lista = Agendamento.objects.all().order_by('data_ag')
+    
+    
+    paginator = Paginator(eventos_lista, 3)
     page = request.GET.get('page')
     eventos = paginator.get_page(page)
 
@@ -26,6 +29,7 @@ def listar(request):
 def agendar(request):
     form = AgendamentoForm(request.POST or None)
     if form.is_valid():
+        form.user = request.user
         form.save()
         return redirect('listar_evento')
     return render(request, 'agendador/agendar_form.html', {'form': form} )

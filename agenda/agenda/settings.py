@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'agendador',
     'users',
-    'accounts'
+    'accounts',
     # pacote de stylo para formulários
     'crispy_forms',
 ]

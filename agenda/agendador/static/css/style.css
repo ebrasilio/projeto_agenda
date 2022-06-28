@@ -129,5 +129,10 @@ ul.messages {
 
 /* Login e Logout */
 .auth-card {
-    margin-bottom: 300px;
+    margin-bottom: 30px;
+}
+
+.change-form-p {
+    margin-top: 300 px;
+    text-align: center;
 }
