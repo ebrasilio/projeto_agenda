@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+
 <!-- {% load crispy_forms_tags %} -->
 
-{% block title %}Agenda{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %} 
 <div class="row">
@@ -10,10 +11,20 @@
             <div class="card-body">
                 <h4 class="card-title text-center">Acessar Agenda</h4>
                 <form method="POST" action="submit">{% csrf_token %}  
-                    {{ form.as_p }}
                     <div>
-                        <button type="submit" class="btn btn-primary btn-block">Agendar</button>
+                        <div align="center" name="meulogin">
+                            <label>Usuário: </label>
+                            <input type="text" name="username">
+                        </div>
+                        <br>
+                        <div align="center"  name="meulogin">
+                            <label>Senha: </label>
+                            <input type="password" name="password">
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
                     </div>
+
                     <br>
                 </form>
                 {% for message in messages %}

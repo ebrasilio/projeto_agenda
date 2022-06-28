@@ -11,5 +11,11 @@ urlpatterns = [
     path('update/<int:pk>/', views.update, name='url_update'),
     path('delete/<int:pk>/', views.delete, name='url_delete'),
     path('cadastro_cliente/',views.cadastro_cliente, name='url_novocliente'),
+    
+    # auth login
+    path('login/', views.login_user, name='login_user'),
+    path('logout/', views.logout_user, name='logout_user'),
+    path('login/submit', views.submit_login, name='submit_login'),
 
+    
 ]

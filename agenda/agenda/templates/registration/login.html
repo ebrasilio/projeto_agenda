@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load crispy_forms_tags %}
+<!-- {% load crispy_forms_tags %} -->
 
 {% block title %}Login{% endblock %}
 
@@ -9,12 +9,12 @@
     <div class="col-md-e offset-md-0 ">
         <div class="card auth-card text-center">
             <div class="card-body">
-                <h4 class="card-title text-center">Entrar na Plataforma</h4>
+                <h4 class="card-title text-center">Acessar Agenda</h4>
                 <form method="post">
                     {% csrf_token %} 
                     <input type="hidden" name="next" value="{{ next }}">
-                    <!-- {{ form.as_p }} -->
-                    {{ form|crispy }}
+                    {{ form.as_p }}
+                    <!-- {{ form|crispy }} -->
                     <button type="submit" class="btn btn-primary btn-block">Entrar</button>
                 </form>
             <p class="change-form-p">Não tem cadastro? <a href="/accounts/register/">Clique aqui</a></p>
