@@ -36,7 +36,7 @@ class Agendamento(models.Model):
     profis  = models.ForeignKey(Funcionario, on_delete = models.PROTECT)
     servico = models.ForeignKey(Servico, on_delete = models.PROTECT)
     cliente = models.ForeignKey(Cliente, on_delete = models.PROTECT)
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    # user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
     def __str__(self):
          return self.data_ag

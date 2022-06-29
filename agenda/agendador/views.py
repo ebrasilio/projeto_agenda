@@ -26,7 +26,7 @@ def submit_login(request):
         password = request.POST.get('password')
         usuario = authenticate(username=username, password=password)
         if usuario is not None:
-            login(request,usuario)
+            login(request, usuario)
             return redirect('/')
         else:
             messages.error(request,"Usuário ou Senha Inválidos ! ")      
@@ -34,11 +34,8 @@ def submit_login(request):
 
 @login_required(login_url = '/login/')
 def listar(request):
-    usuario = request.user
-    eventos_lista = Agendamento.objects.filter(user = usuario).order_by('data_ag')
-    #eventos_lista = Agendamento.objects.all().order_by('data_ag')
- 
-    paginator = Paginator(eventos_lista, 3)
+    eventos_lista = Agendamento.objects.all()
+    paginator = Paginator(eventos_lista, 10)
     page = request.GET.get('page')
     eventos = paginator.get_page(page)
 
