@@ -55,8 +55,10 @@ python3 manage.py runserver
 ```
 
 Projeto Integrador 2 desenvolvido pelo grupo 019 - Univesp
+<ul>
+    <li>Agatha Chaves</li>
+</ul>
 
-Agatha Chaves 
 
 Ariana Maira Bezerra Marcelino
 
