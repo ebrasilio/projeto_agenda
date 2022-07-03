@@ -1,4 +1,3 @@
-# from distutils import core
 from urllib import request
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -34,7 +33,9 @@ def submit_login(request):
 
 @login_required(login_url = '/login/')
 def listar(request):
-    eventos_lista = Agendamento.objects.all()
+    usuario = request.user
+    #eventos_lista = Agendamento.objects.all()
+    eventos_lista = Agendamento.objects.filter(user=usuario)
     paginator = Paginator(eventos_lista, 10)
     page = request.GET.get('page')
     eventos = paginator.get_page(page)
@@ -44,12 +45,21 @@ def listar(request):
 # create
 @login_required(login_url = '/login/')
 def agendar(request):
-    form = AgendamentoForm(request.POST or None)
-    if form.is_valid():
-        form.user = request.user
-        form.save()
+    if request.method == 'POST':
+        form = AgendamentoForm(request.POST)
+        usuario = request.user
+        
+        if form.is_valid():
+            evento = form.save(commit=False)
+            #aplicar modificações aqio
+            evento.user = usuario
+            evento.save()
         return redirect('listar_evento')
-    return render(request, 'agendador/agendar_form.html', {'form': form} )
+
+    else: 
+        form = AgendamentoForm()
+        return render(request, 'agendador/agendar_form.html', {'form': form} )
+
 
 # update - edit
 @login_required

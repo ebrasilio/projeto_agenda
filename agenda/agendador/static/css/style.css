@@ -7,6 +7,7 @@
 .navbar{      /* borda inferior e margem para o conteudo não colar na barra */
     border-bottom: 1px solid #333;
     margin-bottom: 20px;
+    font-size: 20px;
 }
 
 .navbar-nav{  /**/
@@ -41,6 +42,10 @@
     color: #FFF;
     margin-left: 5px;
     margin-right: 10px;
+}
+
+.btn btn-success{
+    background-color: #3476e2;
 }
 
 /* Busca */
@@ -92,16 +97,19 @@
 /* Rodapé*/
 
 footer{
+
     background-color: #333;
-    height: 300px;
+    height: 100px;
     border-top: 2px solid #202020;
 }
 
 footer p{
     color: #f5f5f5;
     text-align: center;
-    top: 50%;
-    position: relative;
+    font-size: 15px;
+    line-height: 0.5;
+    /* top: 50%; */
+    /* position: relative; */
 }
 
 /* Mensagens tem que limpar o cache ctrl+shift+r  */
@@ -147,3 +155,58 @@ ul {
   meulogin {
       margin-top: 10px;
   }
+
+  /* Tela inicial */
+ .home_up{
+    background-color: #000;
+    color:#e4ac4a;   
+    text-align: justify;
+    position: relative;
+    text-align: center;
+    margin-bottom: 20 px;
+
+ }
+
+  .listabene {
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+.par {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.para {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.imgt {
+    width: 100px;
+}
+
+.paragrafo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+}
+.imagemsis{
+
+    display: inline;
+    top: 110px;
+    right: 22220;
+}
+.imagemtep {
+    width: 200px;
+    filter: opacity(0.4) drop-shadow(0 0 0 whitesmoke);
+}
+.imagembene {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px 5px 10px;
+    width: 350px;
+    margin: 20px 5px 10px;
+    box-shadow: 10px 10px 16px;
+}

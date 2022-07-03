@@ -8,7 +8,7 @@ urlpatterns = [
     path('', include('agendador.urls')),
     # app pre construido do django para conta de usuários
     #path('login/', views.login_user)
-    #path('accounts/', include('accounts.urls')),
-    #path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 
 ]

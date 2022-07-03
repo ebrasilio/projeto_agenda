@@ -1,7 +1,38 @@
 {% extends 'base.html' %}
-
+<!-- Puxar css dos index, copiar as fotos -->
 {% block title %}Home{% endblock %}
 
-{% block content %}    
-    <h1>Home de Novo</h1>
+{% block content %}     
+<div class="home_up">
+    <img src="static/img/logotipo.png" class="imagemsis">
+    <br>
+    <h1 style="text-align: center">Nosso site</h1>
+        <p class="par">Bem-vindos à família M'Sister Anunciamos nosso Site Oficial!</p>
+        <p class="paragrafo">(recomendamos o uso de computador para acessar esse site ou se
+            você ter uma resolução pequena ou ajuste o tamanho da tela para 67%) </p>
+
+        <section class="mapa">
+            <h3 class="titulo-principal"> 
+                <img src="static/img/tesoura e pente.png" class="imagemtep"> 
+                Nosso Estabelecimento</h3>
+            <p> Fique Atento A Atualizações Do Nosso Site!, Podemos Mudar o Salão De Lugar A Qualquer Hora</p>
+            <p class="estabe">Estamos Fechados Até Segunda Ordem</p>
+
+            <h2>Beneficios</h2>
+
+            <h4>Todos os serviços de estética num único lugar. Marque seu horário. <br>Oferecemos:</h3>
+                
+            <ul class="listabene">
+                <p class="itensbene">Profissionais Qualificados</p>
+                <p class="itensbene">Espaço Confortavel</p>
+                <p class="itensbene">Atendimento Claro Ao Cliente</p>
+                <p class="itensbene">Localização</p>
+                <p class="itensbene">Pontualidade</p>
+                <p class="itensbene">Limpeza Profunda</p>
+            </ul> 
+            <img src="static/img/corte.jpg" class="imagembene">
+
+        </section>
+        <br><br>
+</div>
 {% endblock %}

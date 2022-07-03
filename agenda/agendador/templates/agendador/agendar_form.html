@@ -9,10 +9,13 @@
         <div class="card auth-card text-center">
             <div class="card-body">
                 <h4 class="card-title text-center">Acessar Agenda</h4>
-                <form method="POST" action="submit">{% csrf_token %}  
+                <form method="POST">{% csrf_token %}  
                     {{ form.as_p }}
                     <div>
-                        <button type="submit" class="btn btn-primary btn-block">Agendar</button>
+                        <input type="submit" class="btn btn-success" style="background-color: #3476e2" value="Agendar">
+
+                        
+                        <!-- <button type="submit" class="btn btn-primary btn-block">Agendar</button> -->
                     </div>
                     <br>
                 </form>

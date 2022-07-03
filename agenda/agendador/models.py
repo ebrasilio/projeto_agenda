@@ -1,17 +1,18 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
+from datetime import datetime, timedelta
 
-class Cliente(models.Model):
-    nome_cli = models.CharField(max_length=100)
-    nasc_cli = models.DateField()
-    cpf_cli = models.IntegerField()
-    tel_cli = models.CharField(max_length=15)  # formatar e verificar 
-    email_cli = models.EmailField()
-    sex_cli = models.CharField(max_length=1)   # aplicar criterio
-    dt_cadastro = models.DateField(auto_now=True)
+# class Cliente(models.Model):
+#     nome_cli = models.CharField(max_length=100)
+#     nasc_cli = models.DateField()
+#     cpf_cli = models.IntegerField()
+#     tel_cli = models.CharField(max_length=15)  # formatar e verificar 
+#     email_cli = models.EmailField()
+#     sex_cli = models.CharField(max_length=1)   # aplicar criterio
+#     dt_cadastro = models.DateField(auto_now=True)
     
-    def __str__(self):
-        return self.nome_cli
+#     def __str__(self):
+#         return self.nome_cli
 
 class Funcionario(models.Model):
     nome_fun = models.CharField(max_length=100)
@@ -35,8 +36,11 @@ class Agendamento(models.Model):
     data_ag = models.DateTimeField()
     profis  = models.ForeignKey(Funcionario, on_delete = models.PROTECT)
     servico = models.ForeignKey(Servico, on_delete = models.PROTECT)
-    cliente = models.ForeignKey(Cliente, on_delete = models.PROTECT)
-    # user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    # cliente = models.ForeignKey(Cliente, on_delete = models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
          return self.data_ag
+    
+    def get_data_ag(self):
+        return self.data_ag.strftime('%d/%m/%Y %H:%M Hrs')
