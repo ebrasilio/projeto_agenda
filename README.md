@@ -29,13 +29,32 @@ django-admin startapp accounts
 
 ```
 <h2>Rodar projeto após git-clone:</h2>
-Para iniciar este projeto, após cloná-lo como ele está:
+Para iniciar este projeto, após cloná-lo, entrar na página do projeto:
 
 ```
 cd projeto_agenda/agenda
+```
+Instalar e configurar o pacote crispy_forms para uso de templates:
+```
+pip install django-crispy-forms
+```
+Incluir o app no settings.py do projeto nos seguintes campos:
+```
+INSTALED_APPS = [
+    ...
+    'crispy_forms', 
+]
 
+CRISPY_TEMPLATE_PACK = 'uni_form'
+```
+Agora subir o projeto com o manage:
+```
 python3 manage.py makemigrations 
 python3 manage.py migrate
 python3 manage.py runserver
 ```
 
+
+```
+
+```
