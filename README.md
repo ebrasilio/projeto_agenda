@@ -1,3 +1,15 @@
+Projeto Integrador 2 desenvolvido pelo grupo 019 - Univesp
+<ul>
+    <li>Agatha Chaves</li>
+    <li>Ariana Maira Bezerra Marcelino</li>
+    <li>Bruno Monserrat Perillo</li>
+    <li>Emilia Maria dos Santos Brasilio</li>
+    <li>Erick Bento Dias Ferreira</li>
+    <li>Gisely Lima da Silva</li>
+    <li>José Guilherme Paciléo Zanardo</li>
+    <li>Taísa Salton Vieira</li>
+</ul>
+
 <h2>prj_agenda</h2>
 
 Como criar ambiente de desenvolvimento, crie a pasta do projeto e dentro dela crie o ambiente virtual:
@@ -53,15 +65,3 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py runserver
 ```
-
-Projeto Integrador 2 desenvolvido pelo grupo 019 - Univesp
-<ul>
-    <li>Agatha Chaves</li>
-    <li>Ariana Maira Bezerra Marcelino</li>
-    <li>Bruno Monserrat Perillo</li>
-    <li>Emilia Maria dos Santos Brasilio</li>
-    <li>Erick Bento Dias Ferreira</li>
-    <li>Gisely Lima da Silva</li>
-    <li>José Guilherme Paciléo Zanardo</li>
-    <li>Taísa Salton Vieira</li>
-</ul>
